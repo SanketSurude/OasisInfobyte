@@ -21,4 +21,45 @@ class BankAccount {
         this.accountNo = sc.nextLine();
         System.out.println("\nRegistration completed..kindly login");
     }
+
+    public void withdraw() {
+        System.out.print("\nEnter amount to withdraw - ");
+        Scanner sc = new Scanner(System.in);
+        float amount = sc.nextFloat();
+        try {
+            if (balance >= amount) {
+                transactions++;
+                balance -= amount;
+                System.out.println("\nWithdraw Succcessfully");
+                String str = amount + " Rs Withdrawed\n";
+                transactionHistory = transactionHistory.concat(str);
+            } else {
+                System.out.println("\nInsufficient Balance");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deposit() {
+        System.out.print("\nEnter amount to deposit - ");
+        Scanner sc = new Scanner(System.in);
+        float amount = sc.nextFloat();
+        try {  
+            if (amount <= 100000f) {
+                transactions++;
+                balance += amount;
+                System.out.println("\nSuccessfully Deposited");
+                String str = amount + " Rs deposited\n";
+                transactionHistory = transactionHistory.concat(str);
+            } else {
+                System.out.println("\nSorry....Limit is 100000.00");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    
 }
+
