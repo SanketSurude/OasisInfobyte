@@ -23,7 +23,7 @@ class BankAccount {
     }
 
     public boolean login() {
-        boolean isLogin = fase;
+        boolean isLogin = false;
         Scanner sc = new Scanner(System.in);
         while (!isLogin) {
             System.out.print("\nEnter Your Username - ");
@@ -120,7 +120,5 @@ class BankAccount {
             System.out.println("\n" + transactionHistory);
         }
     }
-}
-
 }
 
